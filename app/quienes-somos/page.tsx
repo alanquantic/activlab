@@ -12,7 +12,7 @@ const navItems = [
   { label: "Servicios", href: "/servicios" },
   { label: "Acreditaciones", href: "/acreditaciones" },
   { label: "Contacto", href: "/contacto" },
-  { label: "Quejas y sugerencias", href: "/#contacto" },
+  { label: "Quejas y sugerencias", href: "#quejas-y-sugerencias" },
 ];
 
 const images = {

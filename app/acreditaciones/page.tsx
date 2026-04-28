@@ -12,7 +12,7 @@ const navItems = [
   { label: "Servicios", href: "/servicios" },
   { label: "Acreditaciones", href: "/acreditaciones" },
   { label: "Contacto", href: "/contacto" },
-  { label: "Quejas y sugerencias", href: "/#contacto" },
+  { label: "Quejas y sugerencias", href: "#quejas-y-sugerencias" },
 ];
 
 const images = {
@@ -23,8 +23,7 @@ const images = {
     "https://activlab.com.mx/wp-content/uploads/2024/07/WhatsApp-Image-2024-07-09-at-1.37.37-p.m.jpeg",
 };
 
-const certificateUrl =
-  "https://activlab.com.mx/wp-content/uploads/2025/11/L25-823-ACTV-Test-FINAL.pdf";
+const certificateUrl = "/docs/L25-823-ACTV-Test-FINAL.pdf";
 
 export default function AccreditationsPage() {
   return (

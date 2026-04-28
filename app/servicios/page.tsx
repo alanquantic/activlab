@@ -12,7 +12,7 @@ const navItems = [
   { label: "Servicios", href: "/servicios" },
   { label: "Acreditaciones", href: "/acreditaciones" },
   { label: "Contacto", href: "/contacto" },
-  { label: "Quejas y sugerencias", href: "/#contacto" },
+  { label: "Quejas y sugerencias", href: "#quejas-y-sugerencias" },
 ];
 
 const images = {
@@ -64,6 +64,18 @@ const services = [
     image: "https://activlab.com.mx/wp-content/uploads/2022/09/Activ_7.jpg",
     description: ["Análisis cualitativo", "Análisis de MIB-Geosmin"],
   },
+];
+
+const serviceRows = [
+  services.slice(0, 3),
+  services.slice(3, 6),
+  services.slice(6),
+];
+
+const serviceTitleHeights = [
+  "lg:min-h-[96px]",
+  "lg:min-h-[174px]",
+  "lg:min-h-[118px]",
 ];
 
 export default function ServicesPage() {
@@ -120,35 +132,46 @@ export default function ServicesPage() {
               Servicios
             </h1>
 
-            <div className="mt-9 grid gap-x-5 gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
-              {services.map((service) => (
-                <article key={service.title} className="text-center">
-                  <h2 className="mx-auto flex min-h-[88px] max-w-[290px] items-start justify-center text-[22px] font-black leading-tight text-[#0b269d]">
-                    {service.title}
-                  </h2>
+            <div className="mt-9 space-y-20">
+              {serviceRows.map((row, rowIndex) => (
+                <div
+                  key={rowIndex}
+                  className="grid gap-x-5 gap-y-12 sm:grid-cols-2 lg:grid-cols-3"
+                >
+                  {row.map((service) => (
+                    <article key={service.title} className="text-center">
+                      <h2
+                        className={`mx-auto flex min-h-[88px] max-w-[290px] items-start justify-center text-[22px] font-black leading-tight text-[#0b269d] ${
+                          serviceTitleHeights[rowIndex] ?? "lg:min-h-[96px]"
+                        }`}
+                      >
+                        {service.title}
+                      </h2>
 
-                  <div className="flip-card service-flip-card group mt-2">
-                    <div className="flip-card-inner">
-                      <div className="flip-card-face flip-card-front">
-                        <Image
-                          src={service.image}
-                          alt={service.title}
-                          fill
-                          sizes="(min-width: 1024px) 280px, (min-width: 640px) 50vw, 100vw"
-                          className="object-cover"
-                        />
-                      </div>
+                      <div className="flip-card service-flip-card group mt-2">
+                        <div className="flip-card-inner">
+                          <div className="flip-card-face flip-card-front">
+                            <Image
+                              src={service.image}
+                              alt={service.title}
+                              fill
+                              sizes="(min-width: 1024px) 280px, (min-width: 640px) 50vw, 100vw"
+                              className="object-cover"
+                            />
+                          </div>
 
-                      <div className="flip-card-face flip-card-back">
-                        <div className="space-y-3 text-center text-[15px] font-semibold leading-6">
-                          {service.description.map((line) => (
-                            <p key={line}>{line}</p>
-                          ))}
+                          <div className="flip-card-face flip-card-back">
+                            <div className="space-y-3 text-center text-[15px] font-semibold leading-6">
+                              {service.description.map((line) => (
+                                <p key={line}>{line}</p>
+                              ))}
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </article>
+                    </article>
+                  ))}
+                </div>
               ))}
             </div>
           </div>

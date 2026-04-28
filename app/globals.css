@@ -206,4 +206,8 @@ img {
   .button-light {
     @apply bg-white text-black hover:bg-activ-blue hover:text-white focus-visible:outline-white;
   }
+
+  .feedback-field {
+    @apply block min-h-[46px] w-full border border-[#7f8794] bg-white px-3 text-[15px] text-black outline-none transition placeholder:text-[#a2a2a2] focus:border-activ-blue focus:ring-1 focus:ring-activ-blue;
+  }
 }
